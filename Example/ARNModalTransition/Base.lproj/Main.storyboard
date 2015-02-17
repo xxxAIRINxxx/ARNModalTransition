@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="ARNModalTransition" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPg-oe-4RI">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.71372549019999998" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4TN-rM-XRU"/>
+                                </constraints>
+                                <state key="normal" title="Bottom">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FQH-xn-tUZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cK0-NB-c2K">
+                                <rect key="frame" x="325" y="0.0" width="50" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.71372549019999998" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="poD-ur-bzz"/>
+                                </constraints>
+                                <state key="normal" title="Right">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8ul-aI-GZQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9A-ND-IFb">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.71372549019999998" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="F1R-qT-yzu"/>
+                                </constraints>
+                                <state key="normal" title="Left">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="POu-VH-0Ua"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kpL-t1-FFn">
+                                <rect key="frame" x="163" y="318" width="51" height="31"/>
+                                <connections>
+                                    <action selector="dragableChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="uvS-uz-cKi"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dragable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3x-IN-eRt">
+                                <rect key="frame" x="0.0" y="267" width="375" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="kYF-Wt-nTm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="29"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="v9A-ND-IFb" secondAttribute="bottom" id="2MR-A1-JUo"/>
+                            <constraint firstItem="kpL-t1-FFn" firstAttribute="top" secondItem="H3x-IN-eRt" secondAttribute="bottom" constant="16" id="47d-XR-u3P"/>
+                            <constraint firstItem="v9A-ND-IFb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="4PG-V1-Yt8"/>
+                            <constraint firstAttribute="centerY" secondItem="kpL-t1-FFn" secondAttribute="centerY" id="BP7-aB-lra"/>
+                            <constraint firstAttribute="bottom" secondItem="cK0-NB-c2K" secondAttribute="bottom" id="CYj-t0-skg"/>
+                            <constraint firstAttribute="trailing" secondItem="cK0-NB-c2K" secondAttribute="trailing" id="HFa-9p-J1j"/>
+                            <constraint firstAttribute="centerX" secondItem="kpL-t1-FFn" secondAttribute="centerX" id="IrZ-2r-n3r"/>
+                            <constraint firstItem="v9A-ND-IFb" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="Jfq-Jw-mdf"/>
+                            <constraint firstItem="cPg-oe-4RI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="L44-yM-D3j"/>
+                            <constraint firstItem="H3x-IN-eRt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="ajQ-iP-znu"/>
+                            <constraint firstAttribute="trailing" secondItem="H3x-IN-eRt" secondAttribute="trailing" id="cMD-WL-oqE"/>
+                            <constraint firstItem="cK0-NB-c2K" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="eLK-11-EHh"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="cPg-oe-4RI" secondAttribute="bottom" id="iKk-YQ-FcH"/>
+                            <constraint firstAttribute="trailing" secondItem="cPg-oe-4RI" secondAttribute="trailing" id="iPG-Fe-ggX"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="362.5" y="254.5"/>
+        </scene>
+        <!--ModalViewController-->
+        <scene sceneID="ygv-yq-2Ei">
+            <objects>
+                <viewController storyboardIdentifier="ModalViewController" title="ModalViewController" id="oM7-34-HG2" customClass="ModalViewController" customModule="ARNModalTransition" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5tz-4T-ka2"/>
+                        <viewControllerLayoutGuide type="bottom" id="GGk-p4-XX3"/>
+                    </layoutGuides>
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="zY5-f8-QzY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j5r-WC-pLj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="814.5" y="250.5"/>
+        </scene>
+    </scenes>
+</document>
