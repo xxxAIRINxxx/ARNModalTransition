@@ -6,6 +6,8 @@
 [![License](https://img.shields.io/cocoapods/l/ARNModalTransition.svg?style=flat)](http://cocoadocs.org/docsets/ARNModalTransition)
 [![Platform](https://img.shields.io/cocoapods/p/ARNModalTransition.svg?style=flat)](http://cocoadocs.org/docsets/ARNModalTransition)
 
+![capture](capture.gif "capture")
+
 It was inspired by the following products.(Respect!)
 
 - [ZFDragableModalTransition](https://github.com/zoonooz/ZFDragableModalTransition) (objc)

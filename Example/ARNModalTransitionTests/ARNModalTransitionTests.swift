@@ -3,7 +3,7 @@
 //  ARNModalTransitionTests
 //
 //  Created by xxxAIRINxxx on 2015/01/11.
-//  Copyright (c) 2015年 Airin. All rights reserved.
+//  Copyright (c) 2015 Airin. All rights reserved.
 //
 
 import UIKit
