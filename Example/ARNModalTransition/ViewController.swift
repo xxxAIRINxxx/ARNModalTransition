@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     
     @IBAction func tapButton(sender: UIButton) {
         var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        var modalVC: ModalViewController = storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as ModalViewController
+        var modalVC: ModalViewController = storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as! ModalViewController
         var navController = UINavigationController(rootViewController: modalVC)
         
         self.animator = ARNModalTransitonAnimator(modalViewController: navController)

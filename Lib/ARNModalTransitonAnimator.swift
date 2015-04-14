@@ -441,7 +441,7 @@ class ARNDetectScrollViewEndGestureRecognizer: UIPanGestureRecognizer {
     var isFail :Bool?
     var direction : ModalTransitonDirection = .Bottom
     
-    override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
+    override func touchesMoved(touches: Set<NSObject>!, withEvent event: UIEvent!) {
         super.touchesMoved(touches, withEvent: event)
         
         if let scrollView = self.scrollView {
@@ -455,7 +455,7 @@ class ARNDetectScrollViewEndGestureRecognizer: UIPanGestureRecognizer {
                 return
             }
             
-            let touch = touches.anyObject() as UITouch
+            let touch = touches.first as! UITouch
             let nowPoint = touch.locationInView(self.view)
             let prevPoint = touch.previousLocationInView(self.view)
             let topVerticalOffset = -scrollView.contentInset.top
