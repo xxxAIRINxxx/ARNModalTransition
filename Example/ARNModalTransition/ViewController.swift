@@ -12,14 +12,6 @@ class ViewController: UIViewController {
     
     var dragable : Bool = true
     var animator : ARNModalTransitonAnimator?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     @IBAction func tapButton(sender: UIButton) {
         var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())

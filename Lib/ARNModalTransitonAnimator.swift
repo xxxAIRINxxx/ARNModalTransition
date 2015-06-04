@@ -83,20 +83,17 @@ public class ARNModalTransitonAnimator: UIPercentDrivenInteractiveTransition, UI
         
         UIDevice.currentDevice().beginGeneratingDeviceOrientationNotifications()
         
-        weak var weakSelf = self
         NSNotificationCenter.defaultCenter().addObserverForName(
             UIApplicationDidChangeStatusBarFrameNotification,
             object: nil,
-            queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
-                if let weakSelf = weakSelf {
-                    if let backViewController = weakSelf.modalController?.presentingViewController {
-                        backViewController.view.layer.transform = CATransform3DScale(
-                            backViewController.view.layer.transform,
-                            weakSelf.behindViewScale,
-                            weakSelf.behindViewAlpha,
-                            1
-                        )
-                    }
+            queue: NSOperationQueue.mainQueue()) { [weak self] (notification) -> Void in
+                if let backViewController = self?.modalController?.presentingViewController {
+                    backViewController.view.layer.transform = CATransform3DScale(
+                        backViewController.view.layer.transform,
+                        self!.behindViewScale,
+                        self!.behindViewAlpha,
+                        1
+                    )
                 }
         }
     }
@@ -116,14 +113,14 @@ public class ARNModalTransitonAnimator: UIPercentDrivenInteractiveTransition, UI
         return false
     }
     
-    // MARK: UIViewControllerAnimatedTransitioning
+    // MARK: - UIViewControllerAnimatedTransitioning
     
     public func animationEnded(transitionCompleted: Bool) {
         self.isInteractive = false
         self.transitionContext = nil
     }
     
-    // MARK: UIViewControllerAnimatedTransitioning
+    // MARK: - UIViewControllerAnimatedTransitioning
     
     public func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
         return self.transitionDuration
@@ -173,7 +170,7 @@ public class ARNModalTransitonAnimator: UIPercentDrivenInteractiveTransition, UI
                     fromVC.view.alpha = self.behindViewAlpha
                     toVC.view.frame = endRect
                     toVC.view.alpha = 1.0
-            }, completion: { (Bool) -> Void in
+            }, completion: { finished in
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
             })
         } else {
@@ -208,13 +205,13 @@ public class ARNModalTransitonAnimator: UIPercentDrivenInteractiveTransition, UI
                     toVC.view.alpha = 1.0
                     fromVC.view.frame = endRect
                 },
-                completion: { (Bool) -> Void in
+                completion: { finished in
                     transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
             })
         }
     }
     
-    // MARK: UIViewControllerContextTransitioning override
+    // MARK: - UIViewControllerContextTransitioning override
     
     public override func startInteractiveTransition(transitionContext: UIViewControllerContextTransitioning) {
         self.transitionContext = transitionContext
@@ -312,7 +309,7 @@ public class ARNModalTransitonAnimator: UIPercentDrivenInteractiveTransition, UI
                     toVC.view.alpha = 1.0
                     fromVC.view.frame = endRect
                 },
-                completion: { (Bool) -> Void in
+                completion: { finished in
                     transitionContext.completeTransition(true)
                     self.modalController = nil
             })
@@ -336,13 +333,13 @@ public class ARNModalTransitonAnimator: UIPercentDrivenInteractiveTransition, UI
                     toVC.view.layer.transform = self.tempTransform!
                     toVC.view.alpha = self.behindViewAlpha
                     fromVC.view.frame = CGRectMake(0, 0, CGRectGetWidth(fromVC.view.frame), CGRectGetHeight(fromVC.view.frame))
-                }, completion: { (Bool) -> Void in
+                }, completion: { finished in
                     transitionContext.completeTransition(false)
             })
         }
     }
     
-    // MARK: UIViewControllerTransitioning Delegate
+    // MARK: - UIViewControllerTransitioning Delegate
     
     public func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         self.isDismiss = false
@@ -366,7 +363,7 @@ public class ARNModalTransitonAnimator: UIPercentDrivenInteractiveTransition, UI
         return nil
     }
     
-    // MARK: Gesture Delegate
+    // MARK: - Gesture Delegate
     
     public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         if self.direction == .Bottom {
@@ -382,7 +379,7 @@ public class ARNModalTransitonAnimator: UIPercentDrivenInteractiveTransition, UI
         return false
     }
     
-    // MARK: Gesture
+    // MARK: - Gesture
     
     public func handlePan(recognizer: UIPanGestureRecognizer) {
         var location = recognizer.locationInView(self.modalController?.view.window)
@@ -434,7 +431,7 @@ public class ARNModalTransitonAnimator: UIPercentDrivenInteractiveTransition, UI
     }
 }
 
-// MARK: UIPanGestureRecognizer
+// MARK: - UIPanGestureRecognizer
 
 class ARNDetectScrollViewEndGestureRecognizer: UIPanGestureRecognizer {
     weak var scrollView : UIScrollView?
