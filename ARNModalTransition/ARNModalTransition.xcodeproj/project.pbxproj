@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		564787A21A655334004CC9CF /* ARNModalTransitonAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564787A11A655334004CC9CF /* ARNModalTransitonAnimator.swift */; };
 		7A0F92CB1A6273240046859E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F92CA1A6273240046859E /* AppDelegate.swift */; };
 		7A0F92CD1A6273240046859E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F92CC1A6273240046859E /* ViewController.swift */; };
 		7A0F92D01A6273240046859E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F92CE1A6273240046859E /* Main.storyboard */; };
@@ -15,6 +14,7 @@
 		7A0F92D51A6273240046859E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F92D31A6273240046859E /* LaunchScreen.xib */; };
 		7A0F92E11A6273240046859E /* ARNModalTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F92E01A6273240046859E /* ARNModalTransitionTests.swift */; };
 		7A6822D31A6A46DD002F8252 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6822D21A6A46DD002F8252 /* ModalViewController.swift */; };
+		917D483E1B796FB60093BD7E /* ARNModalTransitonAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917D483D1B796FB60093BD7E /* ARNModalTransitonAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +28,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		564787A11A655334004CC9CF /* ARNModalTransitonAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARNModalTransitonAnimator.swift; sourceTree = "<group>"; };
 		7A0F92C51A6273230046859E /* ARNModalTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARNModalTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A0F92C91A6273240046859E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A0F92CA1A6273240046859E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +39,7 @@
 		7A0F92DF1A6273240046859E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A0F92E01A6273240046859E /* ARNModalTransitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARNModalTransitionTests.swift; sourceTree = "<group>"; };
 		7A6822D21A6A46DD002F8252 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		917D483D1B796FB60093BD7E /* ARNModalTransitonAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARNModalTransitonAnimator.swift; path = ARNModalTransition/ARNModalTransitonAnimator.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 		5647879F1A655334004CC9CF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				564787A11A655334004CC9CF /* ARNModalTransitonAnimator.swift */,
+				917D483D1B796FB60093BD7E /* ARNModalTransitonAnimator.swift */,
 			);
 			name = Lib;
 			path = ../../Lib;
@@ -228,9 +228,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A6822D31A6A46DD002F8252 /* ModalViewController.swift in Sources */,
+				917D483E1B796FB60093BD7E /* ARNModalTransitonAnimator.swift in Sources */,
 				7A0F92CD1A6273240046859E /* ViewController.swift in Sources */,
 				7A0F92CB1A6273240046859E /* AppDelegate.swift in Sources */,
-				564787A21A655334004CC9CF /* ARNModalTransitonAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,7 +306,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -342,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
