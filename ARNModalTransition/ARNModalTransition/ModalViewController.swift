@@ -12,6 +12,10 @@ class ModalViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     var tableView : UITableView = UITableView(frame: CGRectZero, style: .Plain)
     let cellIdentifier : String = "Cell"
+    
+    deinit {
+        println("deinit ModalViewController")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +28,6 @@ class ModalViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: "tapCloseButton")
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     func tapCloseButton() {
