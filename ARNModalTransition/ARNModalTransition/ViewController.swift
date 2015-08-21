@@ -78,10 +78,10 @@ class ViewController: UIViewController {
             
             let startRect = navController!.view.frame
             
-            let tempTransform = self!.view.transform
+            self!.view.transform = CGAffineTransformMakeScale(behindViewScale, behindViewScale)
             
             self!.animator.dismissalCancelAnimationHandler = { (containerView: UIView) in
-                self!.view.transform = tempTransform
+                self!.view.transform = CGAffineTransformMakeScale(behindViewScale, behindViewScale)
                 self!.view.alpha = behindViewAlpha
                 navController!.view.frame = startRect
             }
