@@ -14,7 +14,6 @@
 		7A0F92D51A6273240046859E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F92D31A6273240046859E /* LaunchScreen.xib */; };
 		7A0F92E11A6273240046859E /* ARNModalTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F92E01A6273240046859E /* ARNModalTransitionTests.swift */; };
 		7A6822D31A6A46DD002F8252 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6822D21A6A46DD002F8252 /* ModalViewController.swift */; };
-		917D483E1B796FB60093BD7E /* ARNModalTransitonAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917D483D1B796FB60093BD7E /* ARNModalTransitonAnimator.swift */; };
 		917D48401B7970F00093BD7E /* ARNTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917D483F1B7970F00093BD7E /* ARNTransitionAnimator.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +39,6 @@
 		7A0F92DF1A6273240046859E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A0F92E01A6273240046859E /* ARNModalTransitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARNModalTransitionTests.swift; sourceTree = "<group>"; };
 		7A6822D21A6A46DD002F8252 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
-		917D483D1B796FB60093BD7E /* ARNModalTransitonAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARNModalTransitonAnimator.swift; path = ARNModalTransition/ARNModalTransitonAnimator.swift; sourceTree = SOURCE_ROOT; };
 		917D483F1B7970F00093BD7E /* ARNTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARNTransitionAnimator.swift; path = ../../ARNInteractiveTransition/ARNInteractiveTransition/ARNTransitionAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				917D483F1B7970F00093BD7E /* ARNTransitionAnimator.swift */,
-				917D483D1B796FB60093BD7E /* ARNModalTransitonAnimator.swift */,
 			);
 			name = Lib;
 			path = ../../Lib;
@@ -231,7 +228,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A6822D31A6A46DD002F8252 /* ModalViewController.swift in Sources */,
-				917D483E1B796FB60093BD7E /* ARNModalTransitonAnimator.swift in Sources */,
 				7A0F92CD1A6273240046859E /* ViewController.swift in Sources */,
 				917D48401B7970F00093BD7E /* ARNTransitionAnimator.swift in Sources */,
 				7A0F92CB1A6273240046859E /* AppDelegate.swift in Sources */,
