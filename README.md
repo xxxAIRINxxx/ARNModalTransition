@@ -4,9 +4,17 @@
 
 ![capture](capture.gif "capture")
 
+Custom Animation Transition for Present Modal ViewController. written in Swift.
+
 It was inspired by the following products.(Respect!)
 
 - [ZFDragableModalTransition](https://github.com/zoonooz/ZFDragableModalTransition) (objc)
+
+
+## Using Transition Animator
+
+[ARNTransitionAnimator](https://github.com/xxxAIRINxxx/ARNTransitionAnimator)
+
 
 ## Requirements
 
@@ -14,6 +22,7 @@ It was inspired by the following products.(Respect!)
 * iOS 7.1+
 * Swift lang 1.2
 
+
 ## License
 
-ARNModalTransition is available under the MIT license. See the LICENSE file for more info.
+MIT license. See the LICENSE file for more info.
