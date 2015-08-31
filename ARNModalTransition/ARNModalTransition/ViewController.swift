@@ -13,6 +13,24 @@ class ViewController: UIViewController {
     var dragable : Bool = true
     var animator : ARNTransitionAnimator!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: Selector("handleDidChangeStatusBarFrameNotification"),
+            name: UIApplicationDidChangeStatusBarFrameNotification,
+            object: nil
+        )
+    }
+    
+    func handleDidChangeStatusBarFrameNotification() {
+        self.navigationController!.view.frame = UIScreen.mainScreen().applicationFrame
+        if let _topLayoutGuide = self.navigationController?.topLayoutGuide {
+            self.navigationController!.view.frame.origin.y -= _topLayoutGuide.length
+            self.navigationController!.view.frame.size.height += _topLayoutGuide.length
+        }
+    }
+    
     @IBAction func tapButton(sender: UIButton) {
         var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         var modalVC: ModalViewController = storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as! ModalViewController
@@ -68,6 +86,11 @@ class ViewController: UIViewController {
                 fcomView.transform = CGAffineTransformScale(fcomView.transform, behindViewScale, behindViewScale)
                 fcomView.alpha = behindViewAlpha
                 navController!.view.frame = endRect
+            }
+            
+            self!.animator.presentationCompletionHandler = { (containerView: UIView, completeTransition: Bool) in
+                fcomView.alpha = 1.0
+                fcomView.transform = CGAffineTransformIdentity
             }
         }
         
@@ -130,7 +153,7 @@ class ViewController: UIViewController {
                 navController!.view.frame = updateRect
             }
             
-            self!.animator.dismissalCompletionHandler = { [weak self] (containerView: UIView, completeTransition: Bool) in
+            self!.animator.dismissalCompletionHandler = { (containerView: UIView, completeTransition: Bool) in
                 fcomView.alpha = 1.0
                 fcomView.transform = CGAffineTransformIdentity
                 if completeTransition {
