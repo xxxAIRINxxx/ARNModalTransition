@@ -14,7 +14,7 @@ class ModalViewController: UIViewController, UITableViewDataSource, UITableViewD
     let cellIdentifier : String = "Cell"
     
     deinit {
-        println("deinit ModalViewController")
+        print("deinit ModalViewController")
     }
 
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class ModalViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(self.cellIdentifier, forIndexPath: indexPath) 
         
         return cell
     }

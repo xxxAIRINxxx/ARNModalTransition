@@ -32,9 +32,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapButton(sender: UIButton) {
-        var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        var modalVC: ModalViewController = storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as! ModalViewController
-        var navController = UINavigationController(rootViewController: modalVC)
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let modalVC: ModalViewController = storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as! ModalViewController
+        let navController = UINavigationController(rootViewController: modalVC)
         
         self.animator = ARNTransitionAnimator(operationType: .Present, fromVC: self.navigationController!, toVC: navController)
         self.animator.usingSpringWithDamping = 0.8
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
             navController!.view.layoutIfNeeded()
 
             var startRect = CGRectMake(0, 0, CGRectGetWidth(containerView.bounds), CGRectGetHeight(containerView.bounds))
-            var endRect = CGRectMake(0, 0, CGRectGetWidth(containerView.bounds), CGRectGetHeight(containerView.bounds))
+            let endRect = CGRectMake(0, 0, CGRectGetWidth(containerView.bounds), CGRectGetHeight(containerView.bounds))
             
             switch self!.animator.direction {
             case .Bottom:

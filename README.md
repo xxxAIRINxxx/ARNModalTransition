@@ -18,9 +18,9 @@ It was inspired by the following products.(Respect!)
 
 ## Requirements
 
-* Xcode 6.4
-* iOS 7.1+
-* Swift lang 1.2
+* Xcode 7.0
+* iOS 8.1+
+* Swift 2.0
 
 
 ## License
