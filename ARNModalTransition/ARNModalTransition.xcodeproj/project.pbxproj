@@ -14,7 +14,8 @@
 		7A0F92D51A6273240046859E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F92D31A6273240046859E /* LaunchScreen.xib */; };
 		7A0F92E11A6273240046859E /* ARNModalTransitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F92E01A6273240046859E /* ARNModalTransitionTests.swift */; };
 		7A6822D31A6A46DD002F8252 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6822D21A6A46DD002F8252 /* ModalViewController.swift */; };
-		9159BBD51B87498E00AEF9A9 /* ARNTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9159BBD41B87498E00AEF9A9 /* ARNTransitionAnimator.swift */; };
+		91B8DF7F1BB014BB001D047B /* ARNTransitionAnimator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B8DF7D1BB01411001D047B /* ARNTransitionAnimator.framework */; };
+		91B8DF801BB014BB001D047B /* ARNTransitionAnimator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91B8DF7D1BB01411001D047B /* ARNTransitionAnimator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +27,20 @@
 			remoteInfo = ARNModalTransition;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		91B8DF811BB014BC001D047B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				91B8DF801BB014BB001D047B /* ARNTransitionAnimator.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7A0F92C51A6273230046859E /* ARNModalTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARNModalTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,7 +54,7 @@
 		7A0F92DF1A6273240046859E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A0F92E01A6273240046859E /* ARNModalTransitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARNModalTransitionTests.swift; sourceTree = "<group>"; };
 		7A6822D21A6A46DD002F8252 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
-		9159BBD41B87498E00AEF9A9 /* ARNTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARNTransitionAnimator.swift; path = ARNModalTransition/ARNTransitionAnimator.swift; sourceTree = SOURCE_ROOT; };
+		91B8DF7D1BB01411001D047B /* ARNTransitionAnimator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARNTransitionAnimator.framework; path = Carthage/Build/iOS/ARNTransitionAnimator.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91B8DF7F1BB014BB001D047B /* ARNTransitionAnimator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,18 +76,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5647879F1A655334004CC9CF /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				9159BBD41B87498E00AEF9A9 /* ARNTransitionAnimator.swift */,
-			);
-			name = Lib;
-			path = ../../Lib;
-			sourceTree = "<group>";
-		};
 		7A0F92BC1A6273230046859E = {
 			isa = PBXGroup;
 			children = (
+				91B8DF7D1BB01411001D047B /* ARNTransitionAnimator.framework */,
 				7A0F92C71A6273230046859E /* ARNModalTransition */,
 				7A0F92DD1A6273240046859E /* ARNModalTransitionTests */,
 				7A0F92C61A6273230046859E /* Products */,
@@ -90,7 +98,6 @@
 		7A0F92C71A6273230046859E /* ARNModalTransition */ = {
 			isa = PBXGroup;
 			children = (
-				5647879F1A655334004CC9CF /* Lib */,
 				7A0F92CA1A6273240046859E /* AppDelegate.swift */,
 				7A0F92CC1A6273240046859E /* ViewController.swift */,
 				7A6822D21A6A46DD002F8252 /* ModalViewController.swift */,
@@ -137,6 +144,7 @@
 				7A0F92C11A6273230046859E /* Sources */,
 				7A0F92C21A6273230046859E /* Frameworks */,
 				7A0F92C31A6273230046859E /* Resources */,
+				91B8DF811BB014BC001D047B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -230,7 +238,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A6822D31A6A46DD002F8252 /* ModalViewController.swift in Sources */,
-				9159BBD51B87498E00AEF9A9 /* ARNTransitionAnimator.swift in Sources */,
 				7A0F92CD1A6273240046859E /* ViewController.swift in Sources */,
 				7A0F92CB1A6273240046859E /* AppDelegate.swift in Sources */,
 			);
@@ -309,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -345,7 +352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -356,6 +363,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ARNModalTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Airin.$(PRODUCT_NAME:rfc1034identifier)";
@@ -367,6 +378,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ARNModalTransition/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Airin.$(PRODUCT_NAME:rfc1034identifier)";
