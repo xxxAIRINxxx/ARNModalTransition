@@ -9,10 +9,11 @@
 import UIKit
 import ARNTransitionAnimator
 
+var animator : ARNTransitionAnimator!
+
 class ViewController: UIViewController {
     
     var dragable : Bool = true
-    var animator : ARNTransitionAnimator!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +38,11 @@ class ViewController: UIViewController {
         let modalVC: ModalViewController = storyboard.instantiateViewControllerWithIdentifier("ModalViewController") as! ModalViewController
         let navController = UINavigationController(rootViewController: modalVC)
         
-        self.animator = ARNTransitionAnimator(operationType: .Present, fromVC: self.navigationController!, toVC: navController)
-        self.animator.usingSpringWithDamping = 0.8
+        animator = ARNTransitionAnimator(operationType: .Present, fromVC: self.navigationController!, toVC: navController)
+        animator.usingSpringWithDamping = 0.8
         
         if self.dragable {
-            self.animator.interactiveType = .Dismiss
+            animator.interactiveType = .Dismiss
         }
       
         let behindViewAlpha: CGFloat = 0.5
@@ -49,16 +50,16 @@ class ViewController: UIViewController {
         
         let title = sender.titleForState(.Normal)
         if title == "Left" {
-            self.animator!.direction = .Left
+            animator!.direction = .Left
         } else if title == "Right" {
-            self.animator!.direction = .Right
+            animator!.direction = .Right
         } else  {
-            self.animator!.direction = .Bottom
+            animator!.direction = .Bottom
         }
         
         // Present
         
-        self.animator.presentationBeforeHandler = { [weak self, weak navController] (containerView: UIView, transitionContext: UIViewControllerContextTransitioning) in
+        animator.presentationBeforeHandler = { [weak self, weak navController] (containerView: UIView, transitionContext: UIViewControllerContextTransitioning) in
             let fcomView = self!.navigationController!.view
             
             containerView.addSubview(navController!.view)
@@ -68,7 +69,7 @@ class ViewController: UIViewController {
             var startRect = CGRectMake(0, 0, CGRectGetWidth(containerView.bounds), CGRectGetHeight(containerView.bounds))
             let endRect = CGRectMake(0, 0, CGRectGetWidth(containerView.bounds), CGRectGetHeight(containerView.bounds))
             
-            switch self!.animator.direction {
+            switch animator.direction {
             case .Bottom:
                 startRect.origin.y = CGRectGetHeight(containerView.frame)
             case .Left:
@@ -83,13 +84,13 @@ class ViewController: UIViewController {
             startRect.origin.y = transformPoint.y
             navController!.view.frame = startRect
             
-            self!.animator.presentationAnimationHandler = { (containerView: UIView, percentComplete: CGFloat) in
+            animator.presentationAnimationHandler = { (containerView: UIView, percentComplete: CGFloat) in
                 fcomView.transform = CGAffineTransformScale(fcomView.transform, behindViewScale, behindViewScale)
                 fcomView.alpha = behindViewAlpha
                 navController!.view.frame = endRect
             }
             
-            self!.animator.presentationCompletionHandler = { (containerView: UIView, completeTransition: Bool) in
+            animator.presentationCompletionHandler = { (containerView: UIView, completeTransition: Bool) in
                 fcomView.alpha = 1.0
                 fcomView.transform = CGAffineTransformIdentity
             }
@@ -97,7 +98,7 @@ class ViewController: UIViewController {
         
         // Dismiss
         
-        self.animator.dismissalBeforeHandler = { [weak self, weak navController] (containerView: UIView, transitionContext: UIViewControllerContextTransitioning) in
+        animator.dismissalBeforeHandler = { [weak self, weak navController] (containerView: UIView, transitionContext: UIViewControllerContextTransitioning) in
             let fcomView = self!.navigationController!.view
             
             containerView.addSubview(fcomView)
@@ -109,19 +110,19 @@ class ViewController: UIViewController {
             
             fcomView.transform = CGAffineTransformMakeScale(behindViewScale, behindViewScale)
             
-            self!.animator.dismissalCancelAnimationHandler = { (containerView: UIView) in
+            animator.dismissalCancelAnimationHandler = { (containerView: UIView) in
                 fcomView.transform = CGAffineTransformMakeScale(behindViewScale, behindViewScale)
                 fcomView.alpha = behindViewAlpha
                 navController!.view.frame = startRect
             }
             
-            self!.animator.dismissalAnimationHandler = { (containerView: UIView, percentComplete: CGFloat) in
+            animator.dismissalAnimationHandler = { (containerView: UIView, percentComplete: CGFloat) in
                 let scale = behindViewScale + ((1.0 - behindViewScale) * percentComplete)
                 fcomView.transform = CGAffineTransformMakeScale(scale, scale)
                 fcomView.alpha = behindViewAlpha + ((1.0 - behindViewAlpha) * percentComplete)
                 
                 var updateRect = CGRectMake(0, 0, CGRectGetWidth(navController!.view.frame), CGRectGetHeight(navController!.view.frame))
-                switch self!.animator.direction {
+                switch animator.direction {
                 case .Bottom:
                     updateRect.origin.y = CGRectGetHeight(navController!.view.bounds) * percentComplete
                     if updateRect.origin.y < 0.0 {
@@ -154,7 +155,7 @@ class ViewController: UIViewController {
                 navController!.view.frame = updateRect
             }
             
-            self!.animator.dismissalCompletionHandler = { (containerView: UIView, completeTransition: Bool) in
+            animator.dismissalCompletionHandler = { (containerView: UIView, completeTransition: Bool) in
                 fcomView.alpha = 1.0
                 fcomView.transform = CGAffineTransformIdentity
                 if completeTransition {
@@ -163,7 +164,7 @@ class ViewController: UIViewController {
             }
         }
         
-        navController.transitioningDelegate = self.animator
+        navController.transitioningDelegate = animator
         self.presentViewController(navController, animated: true, completion: nil)
     }
     
