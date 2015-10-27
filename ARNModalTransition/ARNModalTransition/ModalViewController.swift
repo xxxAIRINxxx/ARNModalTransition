@@ -31,6 +31,7 @@ class ModalViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tapCloseButton() {
+        animator.interactiveType = .None
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

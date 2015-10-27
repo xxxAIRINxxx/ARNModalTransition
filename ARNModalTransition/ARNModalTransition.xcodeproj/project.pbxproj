@@ -16,6 +16,7 @@
 		7A6822D31A6A46DD002F8252 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6822D21A6A46DD002F8252 /* ModalViewController.swift */; };
 		91B8DF7F1BB014BB001D047B /* ARNTransitionAnimator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B8DF7D1BB01411001D047B /* ARNTransitionAnimator.framework */; };
 		91B8DF801BB014BB001D047B /* ARNTransitionAnimator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91B8DF7D1BB01411001D047B /* ARNTransitionAnimator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FBE7658F829D47B071EE88A6 /* Pods_ARNModalTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A8EC4FADD05E2263E49A74 /* Pods_ARNModalTransition.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		272CC0FCDD631DBB148774F4 /* Pods-ARNModalTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARNModalTransition.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARNModalTransition/Pods-ARNModalTransition.release.xcconfig"; sourceTree = "<group>"; };
+		4E242363AADB56720D12301A /* Pods-ARNModalTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARNModalTransition.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARNModalTransition/Pods-ARNModalTransition.debug.xcconfig"; sourceTree = "<group>"; };
+		50A8EC4FADD05E2263E49A74 /* Pods_ARNModalTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARNModalTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A0F92C51A6273230046859E /* ARNModalTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARNModalTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A0F92C91A6273240046859E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A0F92CA1A6273240046859E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B8DF7F1BB014BB001D047B /* ARNTransitionAnimator.framework in Frameworks */,
+				FBE7658F829D47B071EE88A6 /* Pods_ARNModalTransition.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		767AA0161D06BD53B0AE9F6F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E242363AADB56720D12301A /* Pods-ARNModalTransition.debug.xcconfig */,
+				272CC0FCDD631DBB148774F4 /* Pods-ARNModalTransition.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7A0F92BC1A6273230046859E = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +97,8 @@
 				7A0F92C71A6273230046859E /* ARNModalTransition */,
 				7A0F92DD1A6273240046859E /* ARNModalTransitionTests */,
 				7A0F92C61A6273230046859E /* Products */,
+				767AA0161D06BD53B0AE9F6F /* Pods */,
+				88EC5B7F3CD0CD57858895D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +150,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		88EC5B7F3CD0CD57858895D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50A8EC4FADD05E2263E49A74 /* Pods_ARNModalTransition.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,10 +165,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A0F92E41A6273240046859E /* Build configuration list for PBXNativeTarget "ARNModalTransition" */;
 			buildPhases = (
+				E10D83AB0037294C8BC2567C /* Check Pods Manifest.lock */,
 				7A0F92C11A6273230046859E /* Sources */,
 				7A0F92C21A6273230046859E /* Frameworks */,
 				7A0F92C31A6273230046859E /* Resources */,
 				91B8DF811BB014BC001D047B /* Embed Frameworks */,
+				D3B711D559A928BAD960F6B3 /* Embed Pods Frameworks */,
+				ADBDBF8D7A0BE143D423EEAD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,6 +213,7 @@
 				TargetAttributes = {
 					7A0F92C41A6273230046859E = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 3EVVPNMG59;
 					};
 					7A0F92D91A6273240046859E = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -231,6 +259,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ADBDBF8D7A0BE143D423EEAD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARNModalTransition/Pods-ARNModalTransition-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3B711D559A928BAD960F6B3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARNModalTransition/Pods-ARNModalTransition-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E10D83AB0037294C8BC2567C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7A0F92C11A6273230046859E /* Sources */ = {
@@ -361,8 +437,10 @@
 		};
 		7A0F92E51A6273240046859E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E242363AADB56720D12301A /* Pods-ARNModalTransition.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -376,8 +454,10 @@
 		};
 		7A0F92E61A6273240046859E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 272CC0FCDD631DBB148774F4 /* Pods-ARNModalTransition.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
