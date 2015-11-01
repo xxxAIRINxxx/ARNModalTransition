@@ -163,6 +163,13 @@ class ViewController: UIViewController {
             }
         }
         
+        modalVC.tapCloseButtonHandler = { [weak self] vc in
+            if self?.dragable == true {
+                self?.animator?.interactiveType = .None
+            }
+            vc.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
         navController.transitioningDelegate = self.animator
         self.presentViewController(navController, animated: true, completion: nil)
     }

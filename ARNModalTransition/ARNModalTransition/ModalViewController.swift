@@ -10,6 +10,7 @@ import UIKit
 
 class ModalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var tapCloseButtonHandler : (ModalViewController -> Void)?
     var tableView : UITableView = UITableView(frame: CGRectZero, style: .Plain)
     let cellIdentifier : String = "Cell"
     
@@ -31,7 +32,7 @@ class ModalViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tapCloseButton() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.tapCloseButtonHandler?(self)
     }
     
     // MARK: UITableViewDataSource
