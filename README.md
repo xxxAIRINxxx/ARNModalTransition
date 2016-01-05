@@ -15,6 +15,8 @@ It was inspired by the following products.(Respect!)
 
 ## Using Transition Animator
 
+This sample have created as a showcase of ARNTransitionAnimator.
+
 [ARNTransitionAnimator](https://github.com/xxxAIRINxxx/ARNTransitionAnimator)
 
 
