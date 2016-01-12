@@ -12,6 +12,9 @@ It was inspired by the following products.(Respect!)
 
 - [ZFDragableModalTransition](https://github.com/zoonooz/ZFDragableModalTransition) (objc)
 
+## Demo
+
+[See demo on Appetize.io](https://appetize.io/app/jhybqewvvwy616zzua4wqrtyww?device=iphone5s&scale=75&orientation=portrait&osVersion=9.2)
 
 ## Using Transition Animator
 
