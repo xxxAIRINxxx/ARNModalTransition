@@ -24,6 +24,16 @@ class ViewController: UIViewController {
         )
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("ViewController viewWillAppear")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("ViewController viewWillDisappear")
+    }
+    
     func handleDidChangeStatusBarFrameNotification() {
         self.navigationController!.view.frame = UIScreen.mainScreen().applicationFrame
         if let _topLayoutGuide = self.navigationController?.topLayoutGuide {

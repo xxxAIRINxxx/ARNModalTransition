@@ -31,6 +31,16 @@ class ModalViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("ModalViewController viewWillAppear")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("ModalViewController viewWillDisappear")
+    }
+    
     func tapCloseButton() {
         self.tapCloseButtonHandler?(self)
     }
