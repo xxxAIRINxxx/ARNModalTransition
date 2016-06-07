@@ -27,7 +27,7 @@ class ModalViewController: UIViewController, UITableViewDataSource, UITableViewD
         self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: self.cellIdentifier)
         self.view.addSubview(self.tableView)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: "tapCloseButton")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Close", style: .Plain, target: self, action: #selector(ModalViewController.tapCloseButton))
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
     }
     

@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: Selector("handleDidChangeStatusBarFrameNotification"),
+            selector: #selector(ViewController.handleDidChangeStatusBarFrameNotification),
             name: UIApplicationDidChangeStatusBarFrameNotification,
             object: nil
         )
